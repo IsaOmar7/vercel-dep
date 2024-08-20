@@ -29,7 +29,7 @@ app.use(express.json());
 app.disable('x-powered-by');
 
 const corsOptions = {
-    origin: 'https://vercel-dep-client.vercel.app/',
+    origin: 'https://vercel-dep-client.vercel.app',
     methods: 'GET,POST',
     allowedHeaders: 'Content-Type,Authorization',
 };
@@ -42,6 +42,7 @@ const limiter = rateLimit({
   keyGenerator: (req) => req.headers['x-forwarded-for'] || req.connection.remoteAddress,
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(limiter);
 app.post('/fetch-metadata', async (req, res) => {
   // Validate array of URLs
@@ -99,7 +100,7 @@ app.get('*', (req, res) => {
 app.get("/test",(req,res)=>{
   res.send("connected successfully");
 })
-const PORT =  5000;
+const PORT = procces.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
