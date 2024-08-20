@@ -29,7 +29,7 @@ app.use(express.json());
 app.disable('x-powered-by');
 
 const corsOptions = {
-    origin: 'https://vercel-dep-client.vercel.app',
+    origin: 'http://localhost:3000',
     methods: 'GET,POST',
     allowedHeaders: 'Content-Type,Authorization',
 };
