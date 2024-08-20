@@ -29,7 +29,7 @@ app.use(express.json());
 app.disable('x-powered-by');
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://vercel-dep-client.vercel.app',
     methods: 'GET,POST',
     allowedHeaders: 'Content-Type,Authorization',
 };
@@ -96,7 +96,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, "..",'file-client', 'build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 5000 || "https://vercel-ozcqeqsm2-isaomar7s-projects.vercel.app/";
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
