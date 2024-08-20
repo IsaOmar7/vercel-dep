@@ -29,7 +29,7 @@ app.use(express.json());
 app.disable('x-powered-by');
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://vercel-dep-client.vercel.app',
     methods: 'GET,POST',
     allowedHeaders: 'Content-Type,Authorization',
 };
@@ -88,7 +88,7 @@ app.post('/fetch-metadata', async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "..",'file-client', 'build')));
+// app.use(express.static(path.join(__dirname, "..",'file-client', 'build')));
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
