@@ -42,7 +42,7 @@ const limiter = rateLimit({
   keyGenerator: (req) => req.headers['x-forwarded-for'] || req.connection.remoteAddress,
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(limiter);
 app.post('/fetch-metadata', async (req, res) => {
   // Validate array of URLs
