@@ -50,7 +50,7 @@ const UrlForm = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post('https://vercel-dep-server-side.vercel.app/fetch-metadata', { urls });
+      const response = await axios.post('https://vercel-dep-serv-60qfsx7o6-isaomar7s-projects.vercel.app/fetch-metadata', { urls });
       setMetadata(response.data);
     } catch (err) {
       setError('Failed to fetch metadata');
